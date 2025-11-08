@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.selection-container {
+    max-width: 1400px;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logo i {
+    font-size: 50px;
+}
+
+.logo h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.header h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.user-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.user-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.user-card:hover::before {
+    transform: scaleX(1);
+}
+
+.user-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+}
+
+.card-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: all 0.4s ease;
+}
+
+.user-card:hover .card-icon {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.card-icon i {
+    font-size: 50px;
+    color: #3b82f6;
+    transition: color 0.4s ease;
+}
+
+.user-card:hover .card-icon i {
+    color: white;
+}
+
+.user-card h3 {
+    color: #1e3a8a;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.user-card > p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.card-features {
+    list-style: none;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.card-features li {
+    color: #475569;
+    font-size: 15px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-features i {
+    color: #10b981;
+    font-size: 14px;
+}
+
+.select-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
+}
+
+.select-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+}
+
+.select-btn i {
+    transition: transform 0.3s ease;
+}
+
+.select-btn:hover i {
+    transform: translateX(5px);
+}
+
+.back-link {
+    text-align: center;
+}
+
+.back-link a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.back-link a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 32px;
+    }
+    
+    .header h2 {
+        font-size: 24px;
+    }
+    
+    .user-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-card {
+        padding: 30px;
+    }
+}

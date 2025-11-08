@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMS - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>EduVerse</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="#" class="nav-item" data-page="attendance"><i class="fas fa-calendar-check"></i><span>Attendance</span></a>
+            <a href="#" class="nav-item" data-page="subjects"><i class="fas fa-book"></i><span>My Subjects</span></a>
+            <a href="#" class="nav-item" data-page="cgpa"><i class="fas fa-trophy"></i><span>CGPA</span></a>
+            <a href="#" class="nav-item" data-page="fee"><i class="fas fa-dollar-sign"></i><span>Fee Management</span></a>
+            <a href="#" class="nav-item" data-page="reports"><i class="fas fa-file-alt"></i><span>Reports</span></a>
+            <a href="#" class="nav-item" data-page="teachers"><i class="fas fa-chalkboard-teacher"></i><span>Faculty Directory</span></a>
+            <a href="#" class="nav-item" data-page="about"><i class="fas fa-info-circle"></i><span>About System</span></a>
+            <a href="#" class="nav-item" data-page="features"><i class="fas fa-star"></i><span>Features</span></a>
+            <a href="#" class="nav-item" data-page="settings"><i class="fas fa-cog"></i><span>Settings</span></a>
+            <a href="#" class="nav-item logout" data-page="logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <h1 id="pageTitle">Dashboard</h1>
+            <div class="header-actions">
+                <div class="user-info" onclick="showPage('profile')" style="cursor: pointer;">
+                    <div class="user-details">
+                        <span id="userName">Student</span>
+                        <span id="userReg" class="user-reg">Reg. No: 2021CSE001</span>
+                    </div>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <!-- HOME PAGE -->
+            <div class="page-content" id="home-content">
+                <!-- Student Info Card -->
+                <div class="student-info-card">
+                    <div class="student-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="student-details">
+                        <h2 id="studentName">Rahul Sharma</h2>
+                        <p><strong>Registration No:</strong> <span id="studentReg">2021CSE001</span></p>
+                        <p><strong>Section:</strong> <span id="studentSection">B.Tech CSE 3rd Year A</span></p>
+                        <p><strong>Semester:</strong> 5th Semester</p>
+                    </div>
+                </div>
+
+                <!-- Overall Attendance Card -->
+                <div class="overall-attendance-card">
+                    <div class="attendance-header">
+                        <h3><i class="fas fa-chart-pie"></i> Overall Attendance</h3>
+                        <span class="attendance-percentage">92.5%</span>
+                    </div>
+                    <div class="attendance-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 92.5%"></div>
+                        </div>
+                    </div>
+                    <div class="attendance-stats">
+                        <div class="stat">
+                            <span class="stat-value">148</span>
+                            <span class="stat-label">Present</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Absent</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">160</span>
+                            <span class="stat-label">Total Classes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="card card-blue" onclick="showPage('attendance')" style="cursor: pointer;">
+                        <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="card-info">
+                            <h3>Attendance</h3>
+                            <p>Your attendance record</p>
+                            <span class="card-value">92.5%</span>
+                        </div>
+                    </div>
+                    <div class="card card-green" onclick="showPage('fee')" style="cursor: pointer;">
+                        <div class="card-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="card-info">
+                            <h3>Fee Status</h3>
+                            <p>Semester fee</p>
+                            <span class="card-value">Paid</span>
+                        </div>
+                    </div>
+                    <div class="card card-purple" onclick="showPage('subjects')" style="cursor: pointer;">
+                        <div class="card-icon"><i class="fas fa-book"></i></div>
+                        <div class="card-info">
+                            <h3>Subjects</h3>
+                            <p>Enrolled subjects</p>
+                            <span class="card-value">6</span>
+                        </div>
+                    </div>
+                    <div class="card card-orange" onclick="showPage('cgpa')" style="cursor: pointer;">
+                        <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="card-info">
+                            <h3>CGPA</h3>
+                            <p>Current CGPA</p>
+                            <span class="card-value">8.4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-sections">
+                    <div class="info-card">
+                        <div class="info-header"><i class="fas fa-bullhorn"></i><h3>Announcements</h3></div>
+                        <div class="info-content">
+                            <div class="info-item"><span class="info-date">Oct 28, 2025</span><p>Mid-semester exams from Nov 15-22</p></div>
+                            <div class="info-item"><span class="info-date">Oct 27, 2025</span><p>Guest lecture on AI by industry expert</p></div>
+                            <div class="info-item"><span class="info-date">Oct 26, 2025</span><p>Project submission deadline: Nov 5</p></div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-header"><i class="fas fa-bell"></i><h3>Notifications</h3></div>
+                        <div class="info-content">
+                            <div class="info-item"><span class="info-badge new">New</span><p>Assignment uploaded for Data Structures</p></div>
+                            <div class="info-item"><span class="info-badge new">New</span><p>Attendance below 75% - Take action</p></div>
+                            <div class="info-item"><span class="info-badge">Read</span><p>Marks uploaded for last test</p></div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-header"><i class="fas fa-calendar-alt"></i><h3>Upcoming Events</h3></div>
+                        <div class="info-content">
+                            <div class="info-item"><span class="info-date">Nov 01, 2025</span><p>TCS Campus Placement Drive</p></div>
+                            <div class="info-item"><span class="info-date">Nov 05, 2025</span><p>Tech Fest 2025</p></div>
+                            <div class="info-item"><span class="info-date">Nov 15, 2025</span><p>Mid-Semester Examinations</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ATTENDANCE PAGE -->
+            <div class="page-content hidden" id="attendance-content">
+                <div class="content-card">
+                    <h2>Attendance Management</h2>
+                    <div class="attendance-controls">
+                        <div class="form-group">
+                            <label>Select Section:</label>
+                            <select class="form-select">
+                                <option>B.Tech CSE - 3rd Year A</option>
+                                <option>B.Tech CSE - 3rd Year B</option>
+                                <option>B.Tech ECE - 2nd Year A</option>
+                                <option>MBA - 1st Year</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Select Date:</label>
+                            <input type="date" class="form-input" value="2025-10-26">
+                        </div>
+                        <button class="btn-primary">Load Students</button>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Roll No</th><th>Student Name</th><th>Status</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>001</td><td>Rahul Sharma</td><td><span class="badge badge-success">Present</span></td><td><button class="btn-small btn-success">P</button><button class="btn-small btn-danger">A</button></td></tr>
+                            <tr><td>002</td><td>Priya Patel</td><td><span class="badge badge-success">Present</span></td><td><button class="btn-small btn-success">P</button><button class="btn-small btn-danger">A</button></td></tr>
+                            <tr><td>003</td><td>Amit Kumar</td><td><span class="badge badge-danger">Absent</span></td><td><button class="btn-small btn-success">P</button><button class="btn-small btn-danger">A</button></td></tr>
+                            <tr><td>004</td><td>Sneha Gupta</td><td><span class="badge badge-success">Present</span></td><td><button class="btn-small btn-success">P</button><button class="btn-small btn-danger">A</button></td></tr>
+                        </tbody>
+                    </table>
+                    <button class="btn-primary">Save Attendance</button>
+                </div>
+            </div>
+
+            <!-- STUDENTS PAGE -->
+            <div class="page-content hidden" id="students-content">
+                <div class="content-card">
+                    <h2>Student Directory</h2>
+                    <div class="table-controls">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search students..." class="search-input-table">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <button class="btn-primary">Add New Student</button>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Registration No.</th><th>Name</th><th>Section</th><th>Contact</th><th>Guardian</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2021CSE001</td><td>Rahul Sharma</td><td>B.Tech CSE 3rd Year A</td><td>9876543210</td><td>Mr. Sharma</td><td><button class="btn-icon"><i class="fas fa-eye"></i></button><button class="btn-icon"><i class="fas fa-edit"></i></button></td></tr>
+                            <tr><td>2021CSE002</td><td>Priya Patel</td><td>B.Tech CSE 3rd Year A</td><td>9876543211</td><td>Mrs. Patel</td><td><button class="btn-icon"><i class="fas fa-eye"></i></button><button class="btn-icon"><i class="fas fa-edit"></i></button></td></tr>
+                            <tr><td>2022ECE015</td><td>Amit Kumar</td><td>B.Tech ECE 2nd Year B</td><td>9876543212</td><td>Mr. Kumar</td><td><button class="btn-icon"><i class="fas fa-eye"></i></button><button class="btn-icon"><i class="fas fa-edit"></i></button></td></tr>
+                            <tr><td>2021MBA008</td><td>Sneha Gupta</td><td>MBA 1st Year</td><td>9876543213</td><td>Mr. Gupta</td><td><button class="btn-icon"><i class="fas fa-eye"></i></button><button class="btn-icon"><i class="fas fa-edit"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TEACHERS PAGE -->
+            <div class="page-content hidden" id="teachers-content">
+                <div class="content-card">
+                    <h2>Faculty Directory</h2>
+                    <div class="teacher-grid">
+                        <div class="teacher-card">
+                            <div class="teacher-avatar"><i class="fas fa-user-tie"></i></div>
+                            <h3>Dr. Rajesh Verma</h3>
+                            <p class="teacher-subject">Computer Science & Engineering</p>
+                            <p class="teacher-contact"><i class="fas fa-phone"></i> 9876543210</p>
+                            <p class="teacher-email"><i class="fas fa-envelope"></i> rajesh@college.edu</p>
+                            <div class="teacher-actions">
+                                <button class="btn-secondary">View Schedule</button>
+                                <button class="btn-primary">Edit Profile</button>
+                            </div>
+                        </div>
+                        <div class="teacher-card">
+                            <div class="teacher-avatar"><i class="fas fa-user-tie"></i></div>
+                            <h3>Dr. Sunita Singh</h3>
+                            <p class="teacher-subject">Electronics & Communication</p>
+                            <p class="teacher-contact"><i class="fas fa-phone"></i> 9876543211</p>
+                            <p class="teacher-email"><i class="fas fa-envelope"></i> sunita@college.edu</p>
+                            <div class="teacher-actions">
+                                <button class="btn-secondary">View Schedule</button>
+                                <button class="btn-primary">Edit Profile</button>
+                            </div>
+                        </div>
+                        <div class="teacher-card">
+                            <div class="teacher-avatar"><i class="fas fa-user-tie"></i></div>
+                            <h3>Prof. Anil Sharma</h3>
+                            <p class="teacher-subject">Mechanical Engineering</p>
+                            <p class="teacher-contact"><i class="fas fa-phone"></i> 9876543212</p>
+                            <p class="teacher-email"><i class="fas fa-envelope"></i> anil@college.edu</p>
+                            <div class="teacher-actions">
+                                <button class="btn-secondary">View Schedule</button>
+                                <button class="btn-primary">Edit Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEE PAGE -->
+            <div class="page-content hidden" id="fee-content">
+                <div class="content-card">
+                    <h2>Fee Management</h2>
+                    <div class="fee-summary">
+                        <div class="fee-card"><i class="fas fa-check-circle"></i><h3>Total Collected</h3><p class="fee-amount">₹8,45,00,000</p></div>
+                        <div class="fee-card"><i class="fas fa-clock"></i><h3>Pending</h3><p class="fee-amount">₹2,15,00,000</p></div>
+                        <div class="fee-card"><i class="fas fa-exclamation-triangle"></i><h3>Overdue</h3><p class="fee-amount">₹45,00,000</p></div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Registration No.</th><th>Name</th><th>Section</th><th>Amount</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2021CSE001</td><td>Rahul Sharma</td><td>B.Tech CSE 3rd Year A</td><td>₹85,000</td><td><span class="badge badge-success">Paid</span></td></tr>
+                            <tr><td>2021CSE002</td><td>Priya Patel</td><td>B.Tech CSE 3rd Year A</td><td>₹85,000</td><td><span class="badge badge-warning">Pending</span></td></tr>
+                            <tr><td>2022ECE015</td><td>Amit Kumar</td><td>B.Tech ECE 2nd Year B</td><td>₹75,000</td><td><span class="badge badge-danger">Overdue</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- REPORTS PAGE -->
+            <div class="page-content hidden" id="reports-content">
+                <div class="content-card">
+                    <h2>Reports & Analytics</h2>
+                    <div class="report-categories">
+                        <div class="report-category"><i class="fas fa-chart-bar"></i><h3>Attendance Reports</h3><p>Generate detailed attendance reports</p><button class="btn-primary">Generate Report</button></div>
+                        <div class="report-category"><i class="fas fa-file-invoice-dollar"></i><h3>Fee Reports</h3><p>Track fee collection and dues</p><button class="btn-primary">Generate Report</button></div>
+                        <div class="report-category"><i class="fas fa-graduation-cap"></i><h3>Student Performance</h3><p>Academic performance analysis</p><button class="btn-primary">Generate Report</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABOUT PAGE -->
+            <div class="page-content hidden" id="about-content">
+                <div class="content-card">
+                    <h2>About Student Information Management System</h2>
+                    <p>The Student Information Management System (SIMS) is a comprehensive platform designed to streamline college administration and management. Our system provides efficient tools for managing student records, attendance, fees, and faculty information.</p>
+                    <h3>Our Mission</h3>
+                    <p>To provide educational institutions with powerful, user-friendly tools that enhance administrative efficiency and improve communication between students, faculty, and administration.</p>
+                </div>
+            </div>
+
+            <!-- FEATURES PAGE -->
+            <div class="page-content hidden" id="features-content">
+                <div class="content-card">
+                    <h2>System Features</h2>
+                    <div class="feature-list">
+                        <div class="feature-item"><i class="fas fa-calendar-check"></i><h3>Attendance Management</h3><p>Track and monitor student attendance with automated reports.</p></div>
+                        <div class="feature-item"><i class="fas fa-money-bill-wave"></i><h3>Fee Management</h3><p>Streamline fee collection and generate receipts.</p></div>
+                        <div class="feature-item"><i class="fas fa-users"></i><h3>Student Records</h3><p>Maintain comprehensive student profiles.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETTINGS PAGE -->
+            <div class="page-content hidden" id="settings-content">
+                <div class="content-card">
+                    <h2>Settings</h2>
+                    <div class="settings-section">
+                        <h3><i class="fas fa-user"></i> Profile Settings</h3>
+                        <div class="form-group">
+                            <label>Full Name:</label>
+                            <input type="text" class="form-input" value="Admin User">
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" class="form-input" value="admin@college.edu">
+                        </div>
+                        <button class="btn-primary">Update Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVerse - Select User Type</title>
+    <link rel="stylesheet" href="userselect.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="selection-container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>EduVerse</h1>
+            </div>
+            <h2>Choose Your Login Type</h2>
+            <p>Select how you want to access the system</p>
+        </div>
+
+        <div class="user-cards">
+            <div class="user-card" data-user="student">
+                <div class="card-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Student</h3>
+                <p>Access your personal dashboard, view attendance, grades, and manage your academic information</p>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> View Attendance</li>
+                    <li><i class="fas fa-check"></i> Check Grades</li>
+                    <li><i class="fas fa-check"></i> Fee Management</li>
+                    <li><i class="fas fa-check"></i> Announcements</li>
+                </ul>
+                <button class="select-btn" onclick="selectUser('student')">
+                    Login as Student <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="user-card" data-user="teacher">
+                <div class="card-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Teacher</h3>
+                <p>Manage your classes, mark attendance, upload grades, and communicate with students</p>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Mark Attendance</li>
+                    <li><i class="fas fa-check"></i> Upload Grades</li>
+                    <li><i class="fas fa-check"></i> View Schedule</li>
+                    <li><i class="fas fa-check"></i> Student Management</li>
+                </ul>
+                <button class="select-btn" onclick="selectUser('teacher')">
+                    Login as Teacher <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="user-card" data-user="parent">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Parent</h3>
+                <p>Monitor your child's academic progress, attendance records, and stay connected with teachers</p>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Track Progress</li>
+                    <li><i class="fas fa-check"></i> View Attendance</li>
+                    <li><i class="fas fa-check"></i> Fee Status</li>
+                    <li><i class="fas fa-check"></i> Teacher Communication</li>
+                </ul>
+                <button class="select-btn" onclick="selectUser('parent')">
+                    Login as Parent <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="welcome.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </div>
+
+    <script src="userselect.js"></script>
+</body>
+</html>
